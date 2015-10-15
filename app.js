@@ -35,6 +35,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+app.use(function (req, res, next) { 
+  res.locals.user = req.user;
+   next();
+})
 
 app.use('/', routes);
 app.use('/users', users);
@@ -60,11 +64,6 @@ passport.deserializeUser(function(user, done) {
    done(null, user);
 });
 
-//NOT SURE WHERE THIS COMES FROM YET.........
-app.use(function (req, res, next) { 
-  res.locals.user = req.user;
-   next();
-})
 
 app.get('/auth/linkedin',
   passport.authenticate('linkedin'),

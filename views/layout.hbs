@@ -5,9 +5,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    {{#if message}}
-      <p>
-        Show this test message..... {{message}}
+    {{#if profile}}
+      <img src="{{profile.pictureUrl}}">
     {{/if}}
     {{#if user}} 
       <p>
