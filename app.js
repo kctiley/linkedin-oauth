@@ -80,7 +80,7 @@ app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
 
 app.get('/logout', function(req, res) {
   req.session = null;
-  req.redirect('/')
+  res.redirect('/')
 })
 
 // catch 404 and forward to error handler
