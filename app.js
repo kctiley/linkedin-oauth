@@ -41,7 +41,7 @@ app.use('/users', users);
 passport.use(new LinkedInStrategy({
   clientID: process.env.LINKEDIN_CLIENT_ID,
   clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
-  callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
+  callbackURL:  process.env.HOST + "/auth/linkedin/callback",
   scope: ['r_emailaddress', 'r_basicprofile'],
   // state: true
   },  
